@@ -1,6 +1,6 @@
 # RAG-Based LLM Full-Stack Application<br>
 
-This is a full-stack web application that enables users to upload documents, query an index built from those documents,<br> and retrieve responses powered by a Large Language Model (LLM) using **Retrieval-Augmented Generation (RAG)**.
+This is a full-stack web application that enables users to upload documents, query an index built from those documents and retrieve responses powered by a Large Language Model (LLM) using **Retrieval-Augmented Generation (RAG)**.
 <br>
 ## The application consists of:<br>
 
@@ -68,7 +68,7 @@ RAG_APP/
 * **Parameters:** `text` (required): The query string.<br>
 #### Example:<br>
 ```
-curl "http://localhost:5001/query?text=What%20is%20a%20transformer"<br>
+curl "http://localhost:5001/query?text=What%20is%20a%20transformer"
 ```
 ## Upload File<br>
 * **URL:** `/uploadFile`<br>
