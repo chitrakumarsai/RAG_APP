@@ -26,3 +26,4 @@ venv/
 frontend/build/
 backend/__pycache__/
 data/*.pdf
+*.ipynb
