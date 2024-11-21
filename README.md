@@ -1,6 +1,6 @@
 # RAG-Based LLM Full-Stack Application<br>
 
-This is a full-stack web application that enables users to upload documents, query an index built from those documents,<br> and retrieve responses powered by a Large Language Model (LLM) using **Retrieval-Augmented Generation (RAG)**.
+This is a full-stack web application that enables users to upload documents, query an index built from those documents and retrieve responses powered by a Large Language Model (LLM) using **Retrieval-Augmented Generation (RAG)**.
 <br>
 ## The application consists of:<br>
 
