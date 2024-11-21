@@ -68,7 +68,7 @@ RAG_APP/
 * **Parameters:** `text` (required): The query string.<br>
 #### Example:<br>
 ```
-curl "http://localhost:5001/query?text=What%20is%20a%20transformer"<br>
+curl "http://localhost:5001/query?text=What%20is%20a%20transformer"
 ```
 ## Upload File<br>
 * **URL:** `/uploadFile`<br>
