@@ -1,0 +1,7 @@
+pydantic<2.0
+llama-index
+openai
+pypdf
+python-dotenv
+flask
+flask-cors

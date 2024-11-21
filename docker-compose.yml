@@ -1,0 +1,42 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./data:/app/data  # Mount the data folder for uploaded files
+      - ./storage:/app/storage  # Mount the storage folder for LlamaIndex
+    environment:
+      - FLASK_ENV=production
+    env_file:
+      - .env  
+    depends_on:
+      - index_server
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  index_server:
+    build:
+      context: ./backend
+    command: python index_server.py
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s = socket.socket(socket.AF_INET, socket.SOCK_STREAM); s.connect(('localhost', 5602)); s.close()"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    env_file:
+      - .env  
+    ports:
+      - "5603:5603"
+    volumes:
+      - ./data:/app/data  # Mount the data folder for uploaded files
+      - ./storage:/app/storage  # Mount the storage folder for LlamaIndex
