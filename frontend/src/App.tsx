@@ -50,7 +50,7 @@ const App = () => {
 
                 {/* Query Section */}
                 <div className="mb-4">
-                    <h4>Query the Index</h4>
+                    <h4>Ask a question</h4>
                     <p className="text-muted">Type your query and click "Submit Query" to get an answer.</p>
                     <div className="d-flex">
                         <input
