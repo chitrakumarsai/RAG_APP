@@ -80,7 +80,7 @@ from pprint import pprint
 load_dotenv()
 
 # API key for OpenAI (DO NOT hardcode in production)
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY") # type: ignore
 
 # Global variables
 PERSIST_DIR = "./storage"
@@ -134,7 +134,7 @@ def insert_into_index(filepath, doc_id=None):
     global index
     document = SimpleDirectoryReader(input_files=[filepath]).load_data()[0]
     if doc_id:
-        document.doc_id = doc_id
+        document.doc_id = doc_id # type: ignore
 
     with lock:
         if index is None:
