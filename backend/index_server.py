@@ -83,7 +83,7 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY") # type: ignore
 
 # Global variables
-PERSIST_DIR = "./storage"
+PERSIST_DIR = "./backend/storage"
 index = None
 lock = Lock()
 
@@ -96,7 +96,7 @@ def initialize_index():
     with lock:
         if not os.path.exists(PERSIST_DIR):
             print("Creating a new index...")
-            if os.path.exists('./data'):
+            if os.path.exists('./backend/data'):
                 documents = SimpleDirectoryReader('./data').load_data()
                 index = VectorStoreIndex.from_documents(documents)
                 # Persist the index for later use
