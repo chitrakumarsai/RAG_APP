@@ -12,8 +12,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN python -m nltk.downloader -d /usr/local/share/nltk_data punkt
 
+# Install supervisord
+RUN apt-get update && apt-get install -y supervisor && apt-get clean
+
 # Expose the backend port
 EXPOSE 5000
 
-# Run the Flask app
-CMD ["python", "app.py"]
+# Copy the supervisor configuration
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Run supervisord
+CMD ["supervisord", "-n"]
